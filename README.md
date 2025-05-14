@@ -1,25 +1,39 @@
-# Petuja Finance Widget
+# iOS Finance Widget
 
-A fully customizable Scriptable widget for iOS that displays live prices for selected stocks and cryptocurrencies. The widget supports automatic currency symbol detection, multi-language column headers, and configurable change indicators over custom time ranges (e.g., daily and weekly). 
+A fully customizable [Scriptable](https://scriptable.app) widget for iOS that displays live prices of stocks, ETFs, and cryptocurrencies using data from Yahoo Finance. Supports auto-detected currency symbols, multiple languages, and configurable time ranges for percentage changes.
 
-## Features
+## ✨ Features
 
-- 📈 Live price tracking via Yahoo Finance API
-- 💹 Supports both stocks and cryptocurrencies
-- 🔄 Auto currency detection (€, $, £, etc.)
-- 🌐 Multi-language support: DE, EN, FR, ES
-- 🧮 Configurable change columns (e.g. 1-day, 7-day)
-- 🎨 Light and dark mode support
-- 📱 Optimized for medium and large iOS widgets
-- 🧰 Minimal setup, clean layout, open-source
+- 📊 Live data for **any asset available on Yahoo Finance**
+- 💵 Auto currency symbol detection (€, $, £, etc.)
+- 🌍 Multi-language support: English, German, French, Spanish
+- 📅 Two optional change columns (e.g. 1-day, 7-day change)
+- 🌗 Full support for dark and light mode
+- 📱 Optimized for **medium** and **large** Scriptable widgets
+- ⚙️ Simple and clean configuration at the top of the script
 
-## Example Assets
+## 🛠 Configuration
+
+All configuration is done inside the script file. Example:
 
 ```js
+// Title of the widget
+const WIDGET_TITLE = "Tech & Crypto"
+
+// Language for headers: "EN", "DE", "FR", "ES"
+const LANGUAGE = "EN"
+
+// Enable daily and weekly change columns
+const ENABLE_CHANGE_COL_1 = true
+const RANGE_DAYS_COL_1 = 1
+const ENABLE_CHANGE_COL_2 = true
+const RANGE_DAYS_COL_2 = 7
+
+// Define the assets to display
 const SYMBOLS = [
-  { symbol: "NVDA",      label: "NVIDIA" },
   { symbol: "AAPL",      label: "Apple" },
-  { symbol: "MSFT",      label: "Microsoft" },
-  { symbol: "BTC-EUR",   label: "Bitcoin" },
-  { symbol: "MATIC-EUR", label: "Matic" }
+  { symbol: "NVDA",      label: "NVIDIA" },
+  { symbol: "BTC-USD",   label: "Bitcoin" },
+  { symbol: "ETH-USD",   label: "Ethereum" },
+  { symbol: "MSFT",      label: "Microsoft" }
 ]
