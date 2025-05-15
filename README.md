@@ -45,3 +45,4 @@ const SYMBOLS = [
 ![Medium Widget!](images/ios_finance_widget_medium.jpg)
 
 ### 🌞 Large Size + Light Mode  
+![Medium Widget!](images/ios_finance_widget_big.jpg)
