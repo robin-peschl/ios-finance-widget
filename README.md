@@ -38,8 +38,10 @@ const SYMBOLS = [
   { symbol: "MSFT",      label: "Microsoft" }
 ]
 
-## Example Images
-# Medium Size + Darkmode
+## 🖼️ Example Images
+
+### 🌓 Medium Size + Dark Mode  
 ![Medium Widget!](images/ios_finance_widget_medium.jpg)
-# Big Size + Lightmode
+
+### 🌞 Large Size + Light Mode  
 ![Medium Widget!](images/ios_finance_widget_big.jpg)
