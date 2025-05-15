@@ -37,7 +37,10 @@ const SYMBOLS = [
   { symbol: "ETH-USD",   label: "Ethereum" },
   { symbol: "MSFT",      label: "Microsoft" }
 ]
+´´´
+## 🖼️ Example Images
 
-## Example Images
+### 🌓 Medium Size + Dark Mode  
 ![Medium Widget!](images/ios_finance_widget_medium.jpg)
-![Medium Widget!](images/ios_finance_widget_big.jpg)
+
+### 🌞 Large Size + Light Mode  
