@@ -39,7 +39,5 @@ const SYMBOLS = [
 ]
 
 ## Example Images
-# Medium Size + Darkmode
 ![Medium Widget!](images/ios_finance_widget_medium.jpg)
-# Big Size + Lightmode
 ![Medium Widget!](images/ios_finance_widget_big.jpg)
