@@ -37,7 +37,7 @@ const SYMBOLS = [
   { symbol: "ETH-USD",   label: "Ethereum" },
   { symbol: "MSFT",      label: "Microsoft" }
 ]
-
+```
 ## Example Images
 # Medium Size + Darkmode
 ![Medium Widget!](images/ios_finance_widget_medium.jpg)
