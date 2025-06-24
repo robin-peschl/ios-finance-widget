@@ -85,7 +85,8 @@ function getColor(val, gray) {
 // Define fixed layout width (medium and large share same width)
 function getAdjustedWidgetWidth() {
   switch (config.widgetFamily) {
-    case "small": return 0
+    case "small":
+      return 150
     case "medium":
     case "large":
     default:
@@ -114,21 +115,26 @@ async function createWidget() {
   title.textColor = TEXT
   title.font = Font.boldSystemFont(14)
   widget.addSpacer(8)
-  // Show message if widget is too small
-  if (config.widgetFamily === "small") {
-    const msgStack = widget.addStack()
-    msgStack.addSpacer()
-    const msg = msgStack.addText("Please use at least\na medium-sized widget.")
-    msg.font = Font.systemFont(12)
-    msg.textColor = GRAY
-    msg.centerAlignText()
-    msgStack.addSpacer()
-    widget.addSpacer()
-    const now = new Date()
-    const time = widget.addText(now.toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" }))
-    time.font = Font.systemFont(10)
-    time.textColor = GRAY
-    time.leftAlignText()
+  // Handle small and lock-screen widgets with a simplified layout
+  const isAccessory = config.widgetFamily?.startsWith("accessory")
+  if (config.widgetFamily === "small" || isAccessory) {
+    const asset = SYMBOLS[0]
+    const data = await fetchSymbolData(asset.symbol)
+    if (data) {
+      const label = widget.addText(asset.label)
+      label.textColor = TEXT
+      label.font = Font.boldSystemFont(isAccessory ? 12 : 14)
+      widget.addSpacer(2)
+      const price = widget.addText(`${data.price.toFixed(2)} ${data.currency}`)
+      price.textColor = TEXT
+      price.font = Font.systemFont(isAccessory ? 10 : 12)
+      if (ENABLE_CHANGE_COL_1 && data.change1 !== null) {
+        widget.addSpacer(1)
+        const c1 = widget.addText(formatChange(data.change1))
+        c1.textColor = getColor(data.change1, GRAY)
+        c1.font = Font.systemFont(isAccessory ? 9 : 11)
+      }
+    }
     return widget
   }
   // Fetch and prepare price data

@@ -9,7 +9,7 @@ A fully customizable [Scriptable](https://scriptable.app) widget for iOS that di
 - 🌍 Multi-language support: English, German, French, Spanish
 - 📅 Two optional change columns (e.g. 1-day, 7-day change)
 - 🌗 Full support for dark and light mode
-- 📱 Optimized for **medium** and **large** Scriptable widgets
+- 📱 Optimized for **all widget sizes**, including lock screen widgets
 - ⚙️ Simple and clean configuration at the top of the script
 
 ## 🛠 Configuration
@@ -38,6 +38,8 @@ const SYMBOLS = [
   { symbol: "MSFT",      label: "Microsoft" }
 ]
 ```
+
+Small and lock screen widgets will only display the first asset in the list.
 
 ## 🖼️ Example Images
 
